@@ -1,4 +1,6 @@
-# CourseEditor
+README for VideoCourseEditor
+==========================
+# CourseEditor just for fun
 
 
 					   .-.
