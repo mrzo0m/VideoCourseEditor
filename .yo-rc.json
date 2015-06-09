@@ -1,0 +1,20 @@
+{
+  "generator-jhipster": {
+    "baseName": "Coursensei",
+    "packageName": "ru.zajav.coursensei",
+    "packageFolder": "ru/zajav/coursensei",
+    "authenticationType": "oauth2",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": "no",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "8",
+    "rememberMeKey": "2cafe8238a26764944b4047ca5ad89a194301de3"
+  }
+}
