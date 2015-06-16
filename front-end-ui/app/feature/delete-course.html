@@ -1,0 +1,12 @@
+<div class="modal-header">
+    <h3 class="modal-title">{{modalOptions.headerText}}</h3>
+</div>
+<div class="modal-body">
+    <div><strong>{{modalOptions.course.title}}</strong></div>
+    <div>{{modalOptions.course.description}}</div>
+    <div><em ng-repeat="author in modalOptions.course.authors">{{author.name}}<small ng-show="{{!$last}}">, </small></em>.</div>
+    </div>
+<div class="modal-footer">
+    <button class="btn btn-danger" ng-click="modalOptions.ok()">{{modalOptions.actionButtonText}}</button>
+    <button class="btn btn-warning" ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
+</div>

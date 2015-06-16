@@ -1,0 +1,59 @@
+<section id="login-page">
+    <div>
+        <div class="container content-wrapper">
+            <div class="row">
+                <form name="loginform" novalidate class="signin-form" ng-submit="vm.login()">
+                    <div class="form-group row">
+                        <div class="col-md-2"></div>
+                        <div ng-show="vm.isAuthWarning()" class="alert alert-warning col-md-8" role="alert">
+                            Не правильный логин или пароль
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label for="login" class="form-label">Логин</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="login" id="login" placeholder="Nickname"
+                                   autofocus required ng-pattern="vm.loginPattern" ng-model="vm.userName"/>
+                        </div>
+                        <div class="error col-md-3 validation-info"
+                             ng-show="loginform.login.$invalid && loginform.login.$dirty">
+                            <span ng-show="loginform.login.$error.pattern" class="error validation-info">Поле «Логин» может содержать, только латинские буквы</span>
+                            <span ng-show="loginform.login.$error.required" class="error validation-info">* введите</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label for="password" class="form-label">Пароль</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" placeholder="Password" class="form-control" required id="password"
+                                   name="password" ng-pattern="vm.passwordPattern" ng-model="vm.password"/>
+                        </div>
+                        <div class="error col-md-3 validation-info"
+                             ng-show="loginform.password.$invalid && loginform.password.$dirty">
+                            <span ng-show="loginform.password.$error.pattern" class="error validation-info">Поле «Пароль» может содержать, латинские буквы и цифры</span>
+                            <span ng-show="loginform.password.$error.required" class="error validation-info">* введите</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-3 icons">
+                            <i ng-show="vm.showIcon" class="form-label fa fa-circle-o-notch fa-spin fa-2x"></i>
+                            <i ng-show="loginform.$valid && !vm.showIcon" class="form-label fa fa-check fa-2x"></i>
+                            <i ng-show="loginform.$dirty && !vm.showIcon && !loginform.$valid"
+                               class="form-label fa fa-hand-o-up fa-2x"></i>
+                        </div>
+                        <div class="col-md-6">
+
+                            <input type="submit" ng-disabled="loginform.$invalid" class="btn btn-lg btn-default"
+                                   value="Войти">
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<section id="cources-page" class="container content-wrapper">
+    <div>
+        <div class="row">
+            <div class="col-lg-6"  id="search-group">
+                <div class="input-group">
+                    <input type="text" class="form-control"  placeholder="Фрагмент имени или дата..." ng-model="vm.queryString">
+                    <span class="input-group-btn" id="search-btn">
+                        <button class="btn btn-default" type="button" ng-click="vm.search()">найти</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4" id="add-course" >
+                <button type="button" class="btn btn-default btn-lg" ng-click="vm.addCourse()" aria-label="Добавить курс">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"> Добавить курс</span>
+                </button>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+
+    <div epam-video-course courses="vm.courses"></div>
+</section>

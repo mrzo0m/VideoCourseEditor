@@ -1,0 +1,30 @@
+{
+  "name": "AngularJSCourseEditor",
+  "version": "0.0.7",
+  "description": "epam mentoring : task AngularJs Basic",
+  "author": ["Oleg Burshinov"],
+  "license": "none",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-mocks": "~1.3.8"
+  },
+  "dependencies": {
+    "angular": "~1.3.14",
+    "angular-route": "~1.3.12",
+    "angular-resource": "~1.3.12",
+    "angular-bootstrap": "~0.12.0",
+    "angular-i18n": "~1.3.14",
+    "angular-local-storage": "~0.1.5",
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.2.0",
+    "less":"~2.3.1",
+    "underscore": "~1.6.0",
+    "font-awesome": "~4.2.0"
+  }
+}

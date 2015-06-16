@@ -1,0 +1,213 @@
+@color_lightblue: #52b9e9;
+@color_blue: #1171a3;
+@color_success: #43c83c;
+@color_warning: #f88529;
+@color_important: #fa3031;
+@color_violet: #932ab6;
+@color_epam_blue: #1171a3;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.btn, .badge, .modal, .modal-dialog, .modal-content,
+input, select {
+  -ms-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+header, section, footer, aside, nav, article, figure, figcaption {
+  display: block;
+}
+
+form .ng-invalid.ng-dirty {
+  border-color: lightpink;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+form .ng-valid.ng-dirty {
+  border-color: lightgreen;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px lightgreen;
+}
+
+span.summary.ng-invalid {
+  color: red;
+  font-weight: bold;
+}
+
+span.summary.ng-valid {
+  color: green;
+}
+
+.content-wrapper {
+  width: 960px;
+  margin: 15px auto;
+  text-align: left;
+  padding-bottom: 40px;
+}
+
+.header-box {
+  border: 1px dashed #cccccc;
+  .logoff {
+    padding-top: 10px;
+    padding-right: 30px;
+    float: right;
+    width: auto;
+    text-align: center;
+  }
+}
+
+.breadcrumb {
+  li a {
+    padding: 6px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+  }
+
+}
+
+.breadcrumb > li + li:before {
+  content: normal !important;
+}
+
+#breadcrumb-box {
+  padding-top: 20px;
+  font-size: 250%;
+  display: inline-block;
+  background-color: white;
+  .active {
+    font-size: 80%;
+  }
+  .glyphicon {
+    font-size: 80%;
+  }
+}
+
+.logo {
+  border-style: none;
+  width: 200px;
+  height: 78px;
+  vertical-align: middle;
+  background: url(../images/epam_login_logo.png) no-repeat;
+}
+
+#login-page {
+  display: block;
+  padding-top: 5%;
+  .signin-form {
+    display: block;
+
+    [class*="col-"] {
+      height: 60px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    button[type=submit] {
+      width: auto;
+
+    }
+    .form-label {
+      float: right;
+
+    }
+    .validation-info {
+      color: @color_important;
+
+    }
+  }
+
+}
+
+#cources-page {
+  box-sizing: border-box; /* Ширина блока с полями */
+
+  #search-btn {
+    padding-left: 10px;
+  }
+  #search-group {
+    margin: 0;
+    padding: 0;
+
+  }
+  #add-course {
+    float: right;
+    width: auto;
+    padding-right: 0;
+  }
+
+  .course {
+    border: 1px solid #cccccc;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+}
+
+#edit-cource-page {
+  ::-webkit-scrollbar {
+    width: 1px;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  }
+
+  input[type="number"] {
+    padding-top: 4px;
+    width: 50px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #inputDate {
+    width: 110px;
+  }
+
+  #edit-submit {
+    padding-top: 20px;
+  }
+
+  #autorsSelect {
+    .form-control {
+      border-color: inherit;
+      box-shadow: none;
+    }
+    .col-sm-4 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+#main-footer {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  bottom: -20px;
+  padding-top: 30px;
+  margin-top: -72px; /* negative value of footer height */
+  margin-top: 0px !ie; /* for IE */
+  height: 92px;
+  clear: both;
+  text-align: center;
+  border-top: 1px dashed #cccccc;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 6%, rgba(255, 255, 255, 0.2) 8%, rgba(255, 255, 255, 1) 41%, rgba(255, 255, 255, 1) 59%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(6%, rgba(255, 255, 255, 0.15)), color-stop(8%, rgba(255, 255, 255, 0.2)), color-stop(41%, rgba(255, 255, 255, 1)), color-stop(59%, rgba(255, 255, 255, 1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 6%, rgba(255, 255, 255, 0.2) 8%, rgba(255, 255, 255, 1) 41%, rgba(255, 255, 255, 1) 59%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 6%, rgba(255, 255, 255, 0.2) 8%, rgba(255, 255, 255, 1) 41%, rgba(255, 255, 255, 1) 59%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 6%, rgba(255, 255, 255, 0.2) 8%, rgba(255, 255, 255, 1) 41%, rgba(255, 255, 255, 1) 59%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.15) 6%, rgba(255, 255, 255, 0.2) 8%, rgba(255, 255, 255, 1) 41%, rgba(255, 255, 255, 1) 59%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=0); /* IE6-9 */
+
+}
+
+/*#endregion */
+
