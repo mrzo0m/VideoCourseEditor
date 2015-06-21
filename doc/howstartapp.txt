@@ -1,0 +1,34 @@
+INSTALL:
+0)  install and configure the java, maven (3.2.3)
+1)  https://nodejs.org/        (0.12.4)
+2)  https://www.mongodb.org/   (3.03)
+
+
+MONGO RUN:  (http://blog.ajduke.in/2013/04/10/install-setup-and-start-mongodb-on-windows/)
+1) create folders:
+         C:\Program Files\MongoDB\Server\3.0\db
+         C:\Program Files\MongoDB\Server\3.0\db\log
+         C:\Program Files\MongoDB\Server\3.0\db\data
+
+2) create file:
+         C:\Program Files\MongoDB\Server\3.0\db\mongod.cfg
+
+3) add lines to mongodb.cfg :
+
+systemLog:
+  destination: file
+  path: "C:\\Program Files\\MongoDB\\Server\\3.0\\db\\log\\mongo.log"
+  logAppend: true
+storage:
+  dbPath: "C:\\Program Files\\MongoDB\\Server\\3.0\\db\\data"
+
+
+4) execute commands (admin user):
+> cd C:\Program Files\MongoDB\Server\3.0\bin
+> mongod.exe --config "C:\Program Files\MongoDB\Server\3.0\db\mongod.cfg"
+
+
+HOW START (http://jhipster.github.io/development.html)
+
+1) mvn spring-boot:run 
+2) localhost:8080
