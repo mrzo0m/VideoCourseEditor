@@ -1,0 +1,23 @@
+{
+    "coursenseiApp": {
+        "course" : {
+            "home": {
+                "title": "Courses",
+                "createLabel": "Créer un nouveau Course",
+                "createOrEditLabel": "Créer ou éditer un Course"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Course {{ id }} ?"
+            },
+            "detail": {
+                "title": "Course"
+            },
+            "title": "Title",
+            "duration": "Duration",
+            "startDate": "StartDate",
+            "description": "Description",
+            "authors": "Authors"
+        }
+    }
+}
+

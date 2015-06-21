@@ -1,0 +1,61 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Title",
+            "fieldNameUnderscored": "title",
+            "fieldInJavaBeanMethod": "Title",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "duration",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Duration",
+            "fieldNameUnderscored": "duration",
+            "fieldInJavaBeanMethod": "Duration",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "startDate",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "StartDate",
+            "fieldNameUnderscored": "start_date",
+            "fieldInJavaBeanMethod": "StartDate",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Description",
+            "fieldNameUnderscored": "description",
+            "fieldInJavaBeanMethod": "Description",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "authors",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Authors",
+            "fieldNameUnderscored": "authors",
+            "fieldInJavaBeanMethod": "Authors",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOwnerOneToOne": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "dto": "mapstruct",
+    "pagination": "no",
+    "validation": false
+}
