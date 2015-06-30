@@ -54,7 +54,7 @@ angular.module('coursenseiApp')
         };
 
         $scope.clear = function () {
-            $scope.course = {title: null, duration: null, startDate: null, description: null, authors: null, id: null};
+            $scope.course = {title: null, duration: null, startDate: null, description: null, id: null};
             $scope.editForm.$setPristine();
             $scope.editForm.$setUntouched();
         };

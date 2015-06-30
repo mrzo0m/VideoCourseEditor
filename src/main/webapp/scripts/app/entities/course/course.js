@@ -8,7 +8,7 @@ angular.module('coursenseiApp')
                 url: '/course',
                 data: {
                     roles: ['ROLE_USER'],
-                    pageTitle: 'coursenseiApp.course.home.title'
+                    pageTitle: 'Courses'
                 },
                 views: {
                     'content@': {
@@ -17,10 +17,6 @@ angular.module('coursenseiApp')
                     }
                 },
                 resolve: {
-                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('course');
-                        return $translate.refresh();
-                    }]
                 }
             })
             .state('courseDetail', {
@@ -28,7 +24,7 @@ angular.module('coursenseiApp')
                 url: '/course/:id',
                 data: {
                     roles: ['ROLE_USER'],
-                    pageTitle: 'coursenseiApp.course.detail.title'
+                    pageTitle: 'Course'
                 },
                 views: {
                     'content@': {
@@ -37,10 +33,6 @@ angular.module('coursenseiApp')
                     }
                 },
                 resolve: {
-                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
-                        $translatePartialLoader.addPart('course');
-                        return $translate.refresh();
-                    }]
                 }
             });
     });

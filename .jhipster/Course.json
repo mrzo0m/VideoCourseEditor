@@ -36,15 +36,6 @@
             "fieldNameUnderscored": "description",
             "fieldInJavaBeanMethod": "Description",
             "fieldValidate": false
-        },
-        {
-            "fieldId": 5,
-            "fieldName": "authors",
-            "fieldType": "String",
-            "fieldNameCapitalized": "Authors",
-            "fieldNameUnderscored": "authors",
-            "fieldInJavaBeanMethod": "Authors",
-            "fieldValidate": false
         }
     ],
     "fieldsContainOwnerManyToMany": false,

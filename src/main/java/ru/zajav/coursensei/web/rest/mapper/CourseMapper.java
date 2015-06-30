@@ -11,7 +11,7 @@ import org.mapstruct.*;
 @Mapper(uses = {})
 public interface CourseMapper {
 
-    CourseDTO courseToCourseDTO(Course course);
+	CourseDTO courseToCourseDTO(Course course);
 
     Course courseDTOToCourse(CourseDTO courseDTO);
 }

@@ -1,12 +1,12 @@
 <div>
 
-    <h2 translate="coursenseiApp.course.home.title">Courses</h2>
+    <h2>Courses</h2>
 
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <button class="btn btn-primary" data-toggle="modal" data-target="#saveCourseModal" ng-click="clear()">
-                    <span class="glyphicon glyphicon-flash"></span> <span translate="coursenseiApp.course.home.createLabel">Create a new Course</span>
+                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new Course</span>
                 </button>
             </div>
         </div>
@@ -21,7 +21,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                                 ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" id="myCourseLabel" translate="coursenseiApp.course.home.createOrEditLabel">Create or edit a Course</h4>
+                        <h4 class="modal-title" id="myCourseLabel">Create or edit a Course</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -31,43 +31,37 @@
                         </div>
 
                         <div class="form-group">
-                            <label translate="coursenseiApp.course.title">Title</label>
+                            <label>Title</label>
                             <input type="text" class="form-control" name="title"
                                    ng-model="course.title">
 
                         </div>
                         <div class="form-group">
-                            <label translate="coursenseiApp.course.duration">Duration</label>
+                            <label>Duration</label>
                             <input type="number" class="form-control" name="duration"
                                    ng-model="course.duration">
 
                         </div>
                         <div class="form-group">
-                            <label translate="coursenseiApp.course.startDate">StartDate</label>
+                            <label>StartDate</label>
                             <input type="date" class="form-control" name="startDate"
                                    ng-model="course.startDate">
 
                         </div>
                         <div class="form-group">
-                            <label translate="coursenseiApp.course.description">Description</label>
+                            <label>Description</label>
                             <input type="text" class="form-control" name="description"
                                    ng-model="course.description">
-
-                        </div>
-                        <div class="form-group">
-                            <label translate="coursenseiApp.course.authors">Authors</label>
-                            <input type="text" class="form-control" name="authors"
-                                   ng-model="course.authors">
 
                         </div>
 
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
                         </button>
                         <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
-                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
                         </button>
                     </div>
                 </form>
@@ -82,17 +76,17 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
                                 ng-click="clear()">&times;</button>
-                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                        <h4 class="modal-title">Confirm delete operation</h4>
                     </div>
                     <div class="modal-body">
-                        <p translate="coursenseiApp.course.delete.question" translate-values="{id: '{{course.id}}'}">Are you sure you want to delete this Course?</p>
+                        <p>Are you sure you want to delete this Course?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
                         </button>
                         <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span>Delete</span>
                         </button>
                     </div>
                 </form>
@@ -105,11 +99,10 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th translate="coursenseiApp.course.title">Title</th>
-                    <th translate="coursenseiApp.course.duration">Duration</th>
-                    <th translate="coursenseiApp.course.startDate">StartDate</th>
-                    <th translate="coursenseiApp.course.description">Description</th>
-                    <th translate="coursenseiApp.course.authors">Authors</th>
+                    <th>Title</th>
+                    <th>Duration</th>
+                    <th>StartDate</th>
+                    <th>Description</th>
                     <th></th>
                 </tr>
             </thead>
@@ -120,22 +113,21 @@
                     <td>{{course.duration}}</td>
                     <td>{{course.startDate}}</td>
                     <td>{{course.description}}</td>
-                    <td>{{course.authors}}</td>
                     <td>
                         <button type="submit"
                                 ui-sref="courseDetail({id:course.id})"
                                 class="btn btn-info btn-sm">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
                         </button>
                         <button type="submit"
                                 ng-click="showUpdate(course.id)"
                                 class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
                         </button>
                         <button type="submit"
                                 ng-click="delete(course.id)"
                                 class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
                         </button>
                     </td>
                 </tr>

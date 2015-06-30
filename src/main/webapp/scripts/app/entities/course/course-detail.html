@@ -1,18 +1,18 @@
 
 <div>
-    <h2><span translate="coursenseiApp.course.detail.title">Course</span> {{course.id}}</h2>
+    <h2><span>Course</span> {{course.id}}</h2>
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th translate="entity.detail.field">Field</th>
-                    <th translate="entity.detail.value">Value</th>
+                    <th>Field</th>
+                    <th>Value</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>
-                        <span translate="coursenseiApp.course.title">Title</span>
+                        <span>Title</span>
                     </td>
                     <td>
                         <input type="text" class="input-sm form-control" value="{{course.title}}" readonly>
@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <span translate="coursenseiApp.course.duration">Duration</span>
+                        <span>Duration</span>
                     </td>
                     <td>
                         <input type="text" class="input-sm form-control" value="{{course.duration}}" readonly>
@@ -28,7 +28,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <span translate="coursenseiApp.course.startDate">StartDate</span>
+                        <span>StartDate</span>
                     </td>
                     <td>
                         <input type="text" class="input-sm form-control" value="{{course.startDate}}" readonly>
@@ -36,18 +36,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <span translate="coursenseiApp.course.description">Description</span>
+                        <span>Description</span>
                     </td>
                     <td>
                         <input type="text" class="input-sm form-control" value="{{course.description}}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <span translate="coursenseiApp.course.authors">Authors</span>
-                    </td>
-                    <td>
-                        <input type="text" class="input-sm form-control" value="{{course.authors}}" readonly>
                     </td>
                 </tr>
             </tbody>
@@ -57,6 +49,6 @@
     <button type="submit"
             ui-sref="course"
             class="btn btn-info">
-        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
     </button>
 </div>

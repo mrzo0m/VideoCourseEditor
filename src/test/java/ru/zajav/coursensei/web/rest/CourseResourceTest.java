@@ -3,7 +3,6 @@ package ru.zajav.coursensei.web.rest;
 import ru.zajav.coursensei.Application;
 import ru.zajav.coursensei.domain.Course;
 import ru.zajav.coursensei.repository.CourseRepository;
-import ru.zajav.coursensei.web.rest.mapper.CourseMapper;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -49,14 +48,9 @@ public class CourseResourceTest {
     private static final LocalDate UPDATED_START_DATE = new LocalDate();
     private static final String DEFAULT_DESCRIPTION = "SAMPLE_TEXT";
     private static final String UPDATED_DESCRIPTION = "UPDATED_TEXT";
-    private static final String DEFAULT_AUTHORS = "SAMPLE_TEXT";
-    private static final String UPDATED_AUTHORS = "UPDATED_TEXT";
 
     @Inject
     private CourseRepository courseRepository;
-
-    @Inject
-    private CourseMapper courseMapper;
 
     private MockMvc restCourseMockMvc;
 
@@ -67,7 +61,6 @@ public class CourseResourceTest {
         MockitoAnnotations.initMocks(this);
         CourseResource courseResource = new CourseResource();
         ReflectionTestUtils.setField(courseResource, "courseRepository", courseRepository);
-        ReflectionTestUtils.setField(courseResource, "courseMapper", courseMapper);
         this.restCourseMockMvc = MockMvcBuilders.standaloneSetup(courseResource).build();
     }
 
@@ -79,7 +72,6 @@ public class CourseResourceTest {
         course.setDuration(DEFAULT_DURATION);
         course.setStartDate(DEFAULT_START_DATE);
         course.setDescription(DEFAULT_DESCRIPTION);
-        course.setAuthors(DEFAULT_AUTHORS);
     }
 
     @Test
@@ -100,7 +92,6 @@ public class CourseResourceTest {
         assertThat(testCourse.getDuration()).isEqualTo(DEFAULT_DURATION);
         assertThat(testCourse.getStartDate()).isEqualTo(DEFAULT_START_DATE);
         assertThat(testCourse.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
-        assertThat(testCourse.getAuthors()).isEqualTo(DEFAULT_AUTHORS);
     }
 
     @Test
@@ -116,8 +107,7 @@ public class CourseResourceTest {
                 .andExpect(jsonPath("$.[*].title").value(hasItem(DEFAULT_TITLE.toString())))
                 .andExpect(jsonPath("$.[*].duration").value(hasItem(DEFAULT_DURATION)))
                 .andExpect(jsonPath("$.[*].startDate").value(hasItem(DEFAULT_START_DATE.toString())))
-                .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
-                .andExpect(jsonPath("$.[*].authors").value(hasItem(DEFAULT_AUTHORS.toString())));
+                .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
 
     @Test
@@ -133,8 +123,7 @@ public class CourseResourceTest {
             .andExpect(jsonPath("$.title").value(DEFAULT_TITLE.toString()))
             .andExpect(jsonPath("$.duration").value(DEFAULT_DURATION))
             .andExpect(jsonPath("$.startDate").value(DEFAULT_START_DATE.toString()))
-            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
-            .andExpect(jsonPath("$.authors").value(DEFAULT_AUTHORS.toString()));
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
     }
 
     @Test
@@ -156,7 +145,6 @@ public class CourseResourceTest {
         course.setDuration(UPDATED_DURATION);
         course.setStartDate(UPDATED_START_DATE);
         course.setDescription(UPDATED_DESCRIPTION);
-        course.setAuthors(UPDATED_AUTHORS);
         restCourseMockMvc.perform(put("/api/courses")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(course)))
@@ -170,7 +158,6 @@ public class CourseResourceTest {
         assertThat(testCourse.getDuration()).isEqualTo(UPDATED_DURATION);
         assertThat(testCourse.getStartDate()).isEqualTo(UPDATED_START_DATE);
         assertThat(testCourse.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
-        assertThat(testCourse.getAuthors()).isEqualTo(UPDATED_AUTHORS);
     }
 
     @Test
