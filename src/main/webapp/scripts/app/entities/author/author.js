@@ -3,33 +3,33 @@
 angular.module('coursenseiApp')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('course', {
+            .state('author', {
                 parent: 'entity',
-                url: '/course',
+                url: '/author',
                 data: {
                     roles: ['ROLE_USER'],
-                    pageTitle: 'Courses'
+                    pageTitle: 'Authors'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/entities/course/courses.html',
-                        controller: 'CourseController'
+                        templateUrl: 'scripts/app/entities/author/authors.html',
+                        controller: 'AuthorController'
                     }
                 },
                 resolve: {
                 }
             })
-            .state('courseDetail', {
+            .state('authorDetail', {
                 parent: 'entity',
-                url: '/course/:id',
+                url: '/author/:id',
                 data: {
                     roles: ['ROLE_USER'],
-                    pageTitle: 'Course'
+                    pageTitle: 'Author'
                 },
                 views: {
                     'content@': {
-                        templateUrl: 'scripts/app/entities/course/course-detail.html',
-                        controller: 'CourseDetailController'
+                        templateUrl: 'scripts/app/entities/author/author-detail.html',
+                        controller: 'AuthorDetailController'
                     }
                 },
                 resolve: {

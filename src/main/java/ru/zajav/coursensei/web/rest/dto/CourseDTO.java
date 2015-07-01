@@ -1,19 +1,27 @@
 package ru.zajav.coursensei.web.rest.dto;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import ru.zajav.coursensei.domain.util.CustomLocalDateSerializer;
-import ru.zajav.coursensei.domain.util.ISO8601LocalDateDeserializer;
-import org.joda.time.LocalDate;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
+
+import org.joda.time.LocalDate;
+
+import ru.zajav.coursensei.domain.Author;
+import ru.zajav.coursensei.domain.util.CustomLocalDateSerializer;
+import ru.zajav.coursensei.domain.util.ISO8601LocalDateDeserializer;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 
 /**
  * A DTO for the Course entity.
  */
 public class CourseDTO implements Serializable {
 
-    private String id;
+	private static final long serialVersionUID = -1246187721899436303L;
+
+	private String id;
 
     private String title;
 
@@ -25,9 +33,17 @@ public class CourseDTO implements Serializable {
 
     private String description;
 
-    private String authors;
+    private Set<Author> authors;
 
-    public String getId() {
+    public Set<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(Set<Author> authors) {
+		this.authors = authors;
+	}
+
+	public String getId() {
         return id;
     }
 
@@ -52,11 +68,10 @@ public class CourseDTO implements Serializable {
         this.duration = duration;
     }
 
-
     public LocalDate getStartDate() {
         return startDate;
     }
-
+    
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
@@ -68,15 +83,6 @@ public class CourseDTO implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-
-    public String getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(String authors) {
-        this.authors = authors;
     }
 
     @Override

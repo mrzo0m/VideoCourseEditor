@@ -1,16 +1,19 @@
 package ru.zajav.coursensei.domain;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import ru.zajav.coursensei.domain.util.CustomLocalDateSerializer;
-import ru.zajav.coursensei.domain.util.ISO8601LocalDateDeserializer;
+import java.io.Serializable;
+import java.util.Objects;
+import java.util.Set;
+
 import org.joda.time.LocalDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.io.Serializable;
-import java.util.Objects;
+import ru.zajav.coursensei.domain.util.CustomLocalDateSerializer;
+import ru.zajav.coursensei.domain.util.ISO8601LocalDateDeserializer;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * A Course.
@@ -18,7 +21,9 @@ import java.util.Objects;
 @Document(collection = "COURSE")
 public class Course implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 96639545237296698L;
+
+	@Id
     private String id;
 
     @Field("title")
@@ -34,11 +39,23 @@ public class Course implements Serializable {
 
     @Field("description")
     private String description;
-
+    
     @Field("authors")
-    private String authors;
+    private Set<Author> authors;
 
-    public String getId() {
+	public Set<Author> getAuthors() {
+		return authors;
+	}
+
+	public void setAuthors(Set<Author> authors) {
+		this.authors = authors;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public String getId() {
         return id;
     }
 
@@ -65,7 +82,7 @@ public class Course implements Serializable {
     public LocalDate getStartDate() {
         return startDate;
     }
-
+    
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
@@ -76,14 +93,6 @@ public class Course implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(String authors) {
-        this.authors = authors;
     }
 
     @Override
@@ -115,7 +124,6 @@ public class Course implements Serializable {
                 ", duration='" + duration + "'" +
                 ", startDate='" + startDate + "'" +
                 ", description='" + description + "'" +
-                ", authors='" + authors + "'" +
                 '}';
     }
 }
